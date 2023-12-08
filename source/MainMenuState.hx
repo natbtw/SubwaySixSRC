@@ -273,7 +273,7 @@ class MainMenuState extends MusicBeatState
 
 		if (isUsernameAllowed)
 		{
-			if (FlxG.keys.justPressed.SEVEN)
+			if (FlxG.keys.justPressed.EIGHT)
 			{
 				FlxG.switchState(new dev.DevMenu());
 
