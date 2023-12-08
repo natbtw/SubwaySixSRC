@@ -7,6 +7,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxSave;
 import flixel.util.FlxColor;
+import dev.Alphabet;
 
 class DevMenu extends MusicBeatState
 {
