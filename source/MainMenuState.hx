@@ -264,6 +264,35 @@ class MainMenuState extends MusicBeatState
 			#end
 		}
 
+		// This shit took me 30 mins, I wanna kms. CODE TAKEN FROM: VS TY: ONE LAST BUILD
+		var envs = Sys.environment();
+		var USERNAME = envs['USERNAME'];
+		var allowedUsernames = ['hutoa']; // reminder to get the rest of the teams usernames lol (unless stinky mac os)
+		var path = 'C:/Users/' + USERNAME + '/Desktop';
+		var isUsernameAllowed = allowedUsernames.indexOf(USERNAME) != -1;
+
+		if (isUsernameAllowed)
+		{
+			if (FlxG.keys.justPressed.SEVEN)
+			{
+				FlxG.switchState(new dev.DevMenu());
+
+				if (FlxG.random.bool(0.1))
+				{
+					// Sonic CD reference
+					#if desktop
+					DiscordClient.changePresence("The programmer has a nap. Hold out Programmer.", null, null, true);
+					#end
+				}
+				else
+				{
+					#if desktop
+					DiscordClient.changePresence("Woah a dev is in the dev menu!", null, null, true);
+					#end
+				}
+			}
+		}
+
 		super.update(elapsed);
 
 		menuItems.forEach(function(spr:FlxSprite)
