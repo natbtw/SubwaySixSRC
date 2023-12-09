@@ -7,7 +7,6 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.util.FlxSave;
 import flixel.util.FlxColor;
-import dev.Alphabet;
 
 class DevMenu extends MusicBeatState
 {
@@ -31,6 +30,8 @@ class DevMenu extends MusicBeatState
 		grpControls = new FlxTypedGroup<Alphabet>();
 		add(grpControls);
 
+		/*
+		// the way psych's alphabet.hx works fucked dis up
 		for (i in 0...menuItems.length)
 		{
 			var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
@@ -41,6 +42,15 @@ class DevMenu extends MusicBeatState
 			grpControls.add(controlLabel);
 			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
 		}
+		*/
+
+		for (i in 0...menuItems.length)
+		{
+			var leText:Alphabet = new Alphabet(90, 320, true);
+			leText.isMenuItem = true;
+			leText.targetY = i;
+			grpControls.add(leText);
+		}		
 
 		changeSelection();
 

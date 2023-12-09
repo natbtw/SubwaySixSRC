@@ -33,7 +33,14 @@ class Song1 extends FlxState
 		titlestatebg.alpha = 0.5;
 		titlestatebg.screenCenter();
 		add(titlestatebg);
-		titlestatebg.shader = colorShader.shader;
+	//	titlestatebg.shader = colorShader.shader;
+
+		var josiedialogue:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('dialoguestates/chars/SubwaySixFakeDialouge'));
+		josiedialogue.setGraphicSize(Std.int(josiedialogue.width * 1.175));
+		josiedialogue.updateHitbox();
+		josiedialogue.screenCenter();
+		josiedialogue.antialiasing = ClientPrefs.globalAntialiasing;
+		add(josiedialogue);
 
         colorShader = new ColorSwapEffect();
 

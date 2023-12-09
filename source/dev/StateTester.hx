@@ -40,13 +40,10 @@ class StateTester extends MusicBeatState
 
 		for (i in 0...menuItems.length)
 		{
-			var controlLabel:Alphabet = new Alphabet(0, (70 * i) + 30, menuItems[i], true, false);
-			controlLabel.screenCenter();
-			controlLabel.y = (100 * i) + 70;
-			// controlLabel.isMenuItem = true;
-			// controlLabel.targetY = i;
-			grpControls.add(controlLabel);
-			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
+			var leText:Alphabet = new Alphabet(90, 320, true);
+			leText.isMenuItem = true;
+			leText.targetY = i;
+			grpControls.add(leText);
 		}
 
 		changeSelection();
