@@ -21,6 +21,7 @@ using StringTools;
 class StateTesterNEW extends MusicBeatState
 {
 	var options:Array<String> = [
+		'Fake Dialogue State',
 		'Song 1 Dialogue State'
 	];
 	private var grpTexts:FlxTypedGroup<Alphabet>;
@@ -75,6 +76,8 @@ class StateTesterNEW extends MusicBeatState
 		if (controls.ACCEPT)
 		{
 			switch(options[curSelected]) {
+				case 'Fake Dialogue State':
+					LoadingState.loadAndSwitchState(new dialogue.mainweek.FakeDialogue());
 				case 'Song 1 Dialogue State':
 					LoadingState.loadAndSwitchState(new dialogue.mainweek.Song1());
 			}

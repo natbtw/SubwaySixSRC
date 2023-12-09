@@ -12,7 +12,7 @@ import dialogue.shaders.ColorSwapShader;
 import openfl.filters.ShaderFilter;
 import flixel.addons.display.FlxBackdrop;
 
-class Song1 extends FlxState
+class FakeDialogue extends FlxState
 {
 	public var camHUD:FlxCamera;
     var colorShader:ColorSwapEffect;
@@ -35,14 +35,18 @@ class Song1 extends FlxState
 		add(titlestatebg);
 	//	titlestatebg.shader = colorShader.shader;
 
-		var josiedialogue:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('dialogues/chars/SubwaySixFakeDialouge'));
-		josiedialogue.setGraphicSize(Std.int(josiedialogue.width * 1.175));
+		var josiedialogue:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.swagimage('dialogues/SSSFD'));
 		josiedialogue.updateHitbox();
 		josiedialogue.screenCenter();
 		josiedialogue.antialiasing = ClientPrefs.globalAntialiasing;
 		add(josiedialogue);
 
         colorShader = new ColorSwapEffect();
+
+        if(FlxG.keys.justPressed.ESCAPE)
+        {
+            FlxG.switchState(new dev.StateTesterNEW());
+        }
 
         super.create();
     }

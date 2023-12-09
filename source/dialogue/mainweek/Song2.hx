@@ -1,4 +1,5 @@
 // I do be taking code from FX Engine for dis! (Shhh....)
+// Dialogue: "Yea man, that kicked ass! I'll go another round!"
 package dialogue.mainweek;
 
 import flixel.FlxState;
@@ -12,7 +13,7 @@ import dialogue.shaders.ColorSwapShader;
 import openfl.filters.ShaderFilter;
 import flixel.addons.display.FlxBackdrop;
 
-class Song1 extends FlxState
+class Song2 extends FlxState
 {
 	public var camHUD:FlxCamera;
     var colorShader:ColorSwapEffect;

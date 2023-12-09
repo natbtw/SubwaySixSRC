@@ -30,6 +30,37 @@ class Paths
 	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
 	inline public static var VIDEO_EXT = "mp4";
 
+	// swag shit
+	inline static public function swagimage(key:String, ?library:String)
+	{
+		return getswagPath('images/$key.png', IMAGE, library);
+	}
+
+	public static function getswagPath(file:String, type:AssetType, ?library:Null<String> = null)
+		{
+			if (library != null)
+				return getLibraryPath(file, library);
+	
+			if (currentLevel != null)
+			{
+				var levelPath = getLibraryPathForce(file, currentLevel);
+				if (OpenFlAssets.exists(levelPath, type))
+					return levelPath;
+	
+				levelPath = getLibraryPathForce(file, currentLevel + '_high');
+				if (OpenFlAssets.exists(levelPath, type))
+					return levelPath;
+	
+				levelPath = getLibraryPathForce(file, "shared");
+				if (OpenFlAssets.exists(levelPath, type))
+					return levelPath;
+			}
+	
+			return getPreloadPath(file);
+		}
+
+	// base psych shit
+
 	#if MODS_ALLOWED
 	public static var ignoreModFolders:Array<String> = [
 		'characters',
